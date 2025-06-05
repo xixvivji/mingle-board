@@ -12,11 +12,11 @@ public class User {
         // 기본 생성자
     }
 
-    public User(Long id, String username, String password, String email) {
+    public User(Long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.email = email;
+
     }
 
     public Long getId() {
@@ -43,11 +43,5 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
