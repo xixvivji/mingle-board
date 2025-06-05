@@ -30,4 +30,6 @@ public abstract class BaseTimeEntity {
     @Column(nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
     private OffsetDateTime modifiedAt;
+
+    //13255
 }
