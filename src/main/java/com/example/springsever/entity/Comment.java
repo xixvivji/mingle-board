@@ -49,6 +49,7 @@ public class Comment extends BaseTimeEntity {
     public void connectPost(Post post) {
         this.post = post;
         post.getCommentList().add(this);
+        //해당 댓글이 어느 게시글(Post)에 달린 것인지 연관 관계를 연결
     }
 
     public void connectUser(User user) {
