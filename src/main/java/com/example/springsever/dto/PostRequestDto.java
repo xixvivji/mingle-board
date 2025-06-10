@@ -1,9 +1,10 @@
 package com.example.springsever.dto;
 
-public class PostRequestDto {
-    public String getTitle() {
-    }
+import lombok.Getter;
 
-    public String getContent() {
-    }
+@Getter
+public class PostRequestDto {
+    private String username;
+    private String content;
+    private String title;
 }

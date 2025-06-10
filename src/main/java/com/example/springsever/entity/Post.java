@@ -43,15 +43,15 @@ public class Post extends BaseTimeEntity {
     @JsonIgnore
     private List<Comment> commentList = new ArrayList<>();
 
-    public Post(PostRequestDto dto, User user) {
-        this.title = dto.getTitle();
-        this.content = dto.getContent();
+    public Post(PostRequestDto postRequestDto, User user) {
+        this.title = postRequestDto.getTitle();
+        this.content = postRequestDto.getContent();
         this.user = user;
     }
 
-    public void update(PostRequestDto dto) {
-        this.title = dto.getTitle();
-        this.content = dto.getContent();
+    public void update(PostRequestDto postRequestDto) {
+        this.title = postRequestDto.getTitle();
+        this.content = postRequestDto.getContent();
     }
 
     public void setUser(User user) {
