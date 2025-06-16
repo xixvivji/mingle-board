@@ -1,9 +1,9 @@
 package com.example.springsever.dto;
 
 
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.processing.Pattern;
 
 @Getter
 @Setter
