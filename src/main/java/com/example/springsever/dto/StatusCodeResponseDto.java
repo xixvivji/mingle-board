@@ -1,5 +1,7 @@
 package com.example.springsever.dto;
 
+import lombok.Getter;
+
 @Getter
 public class StatusCodeResponseDto {
     private String message;
