@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * 모든 엔티티의 생성 및 수정 시간을 자동으로 관리하는 추상 클래스입니다.
@@ -19,6 +20,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // JPA를 위한 기본 생성자
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
+@EnableJpaAuditing //시간 값이 자동으로 입력
 public abstract class BaseTimeEntity {
 
     @CreatedDate

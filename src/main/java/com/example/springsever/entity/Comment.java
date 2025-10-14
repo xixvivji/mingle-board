@@ -24,6 +24,7 @@ public class Comment extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(nullable = false)
     private String content;
 
@@ -36,6 +37,11 @@ public class Comment extends BaseTimeEntity {
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnore
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    @JsonIgnore
+    private Comment parent;
 
     public Comment(CommentRequestDto commentRequestDto) {
         this.content = commentRequestDto.getContent();
@@ -55,5 +61,9 @@ public class Comment extends BaseTimeEntity {
     public void connectUser(User user) {
         this.user = user;
         user.getCommentList().add(this);
+    }
+    
+    public void connectParent(Comment parent) {
+        this.parent = parent;
     }
 }
