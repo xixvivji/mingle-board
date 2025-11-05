@@ -72,20 +72,27 @@ mingle-board/
 ## 개발 및 실행 방법
 
 1. **환경 구성**
-   - Java 17, Docker, MySQL, ElasticSearch
+   - Java 17
 
 2. **프로젝트 빌드**
-   ```
-   mvn clean package
-   ```
-
-3. **통합 실행 (Docker Compose)**
-   ```
-   docker-compose up --build
+   ```bash
+   ./gradlew clean build
    ```
 
-4. **API 문서 확인**
-   - http://localhost:{포트}/swagger-ui/index.html
+3. **로컬 실행**
+   ```bash
+   ./gradlew bootRun
+   ```
+   - 애플리케이션은 http://localhost:8080 에서 실행됩니다
+   - H2 콘솔은 http://localhost:8080/h2-console 에서 접근 가능합니다
+   
+4. **테스트 실행**
+   ```bash
+   ./gradlew test
+   ```
+
+5. **API 문서 확인**
+   - http://localhost:8080/swagger-ui/index.html (추후 구성 예정)
 
 ---
 
